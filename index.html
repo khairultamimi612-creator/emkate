@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EMKATE Property</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+<div class="logo-box" onclick="showPage('home')">
+<img src="logo.png" class="logo">
+<h2 class="brand">EMKATE</h2>
+</div>
+
+<nav>
+<button onclick="showPage('home')">Home</button>
+<button onclick="showPage('about')">About</button>
+<button onclick="showPage('services')">Services</button>
+<button onclick="showPage('contact')">Contact</button>
+</nav>
+</header>
+
+<!-- ================= HOME ================= -->
+<section id="home" class="active">
+
+<div class="hero">
+<div class="hero-bg left"></div>
+<div class="hero-bg right"></div>
+
+<div class="hero-content">
+<h1>Cari Properti Impian Anda</h1>
+<p>Temukan rumah terbaik dengan EMKATE</p>
+
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Cari rumah..." onkeyup="searchProperty()">
+<button onclick="searchProperty()">Cari</button>
+</div>
+</div>
+</div>
+
+<!-- FILTER -->
+<div class="filter-box">
+<select id="filterType">
+<option value="all">Semua Tipe</option>
+<option value="minimalis">Minimalis</option>
+<option value="modern">Modern</option>
+<option value="mewah">Mewah</option>
+</select>
+
+<select id="filterPrice">
+<option value="all">Semua Harga</option>
+<option value="1000">Dibawah 1 M</option>
+<option value="2000">1M - 2M</option>
+<option value="3000">Diatas 2M</option>
+</select>
+
+<button onclick="filterProperty()">Filter</button>
+</div>
+
+<!-- GRID -->
+<div class="grid">
+
+<div class="card" data-type="minimalis" data-price="850">
+<img src="rumah1.png">
+<h3>Rumah Minimalis Pink</h3>
+<p>Rp 680 Juta</p>
+<button onclick="openModal('rumah1.png','Rumah Minimalis Pink','Rp 680 Juta')">Detail</button>
+<a href="#" class="wa-btn" onclick="chatWA('Rumah Minimalis Pink','Rp 680 Juta')">Chat WA</a>
+</div>
+
+<div class="card" data-type="modern" data-price="1800">
+<img src="rumah2.png">
+<h3>Rumah Modern Kaca</h3>
+<p>Rp 730 Juta</p>
+<button onclick="openModal('rumah2.png','Rumah Modern Kaca','Rp 730 Juta')">Detail</button>
+<a href="#" class="wa-btn" onclick="chatWA('Rumah Modern Kaca','Rp 730 Juta')">Chat WA</a>
+</div>
+
+<div class="card" data-type="mewah" data-price="2200">
+<img src="rumah3.jpeg">
+<h3>Rumah Mewah Classic</h3>
+<p>Rp 1.2 Miliar</p>
+<button onclick="openModal('rumah3.jpeg','Rumah Mewah Classic','Rp 1.2 Miliar')">Detail</button>
+<a href="#" class="wa-btn" onclick="chatWA('Rumah Mewah Classic','Rp 1.2 Miliar')">Chat WA</a>
+</div>
+
+</div>
+</section>
+
+<!-- ================= ABOUT PREMIUM ================= -->
+<section id="about">
+
+<div class="about-wrapper">
+
+<div class="about-top">
+<h1>Tentang EMKATE Property</h1>
+<p>
+EMKATE Property adalah platform properti modern yang menghadirkan hunian berkualitas 
+dengan desain elegan, harga kompetitif, dan layanan profesional.
+</p>
+</div>
+
+<div class="about-stats">
+<div class="stat-box"><h2>150+</h2><p>Properti Terjual</p></div>
+<div class="stat-box"><h2>100%</h2><p>Kepuasan Klien</p></div>
+<div class="stat-box"><h2>5+</h2><p>Tahun Pengalaman</p></div>
+<div class="stat-box"><h2>24/7</h2><p>Support</p></div>
+</div>
+
+<div class="about-grid">
+<div class="about-card">
+<h3>🏠 Properti Berkualitas</h3>
+<p>Rumah modern dengan lokasi strategis dan material terbaik.</p>
+</div>
+
+<div class="about-card">
+<h3>🎨 Desain Premium</h3>
+<p>Didukung arsitek profesional untuk hasil maksimal.</p>
+</div>
+
+<div class="about-card">
+<h3>💰 Harga Kompetitif</h3>
+<p>Harga terbaik untuk investasi.</p>
+</div>
+
+<div class="about-card">
+<h3>⚡ Layanan Cepat</h3>
+<p>Respon cepat via WhatsApp & konsultasi langsung.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section id="services">
+
+<div class="services-wrapper">
+
+<h1>Layanan Profesional Kami</h1>
+<p class="services-desc">
+Kami menyediakan berbagai layanan properti dan desain untuk membantu Anda mendapatkan hunian terbaik dengan proses yang mudah dan profesional.
+</p>
+
+<div class="services-grid">
+
+<!-- 1 -->
+<div class="service-card">
+<h3>🏠 Jual Beli Properti</h3>
+<p>Kami menyediakan rumah siap huni dengan lokasi strategis dan harga terbaik.</p>
+<ul>
+<li>✔ Legalitas aman</li>
+<li>✔ Lokasi premium</li>
+<li>✔ Siap huni</li>
+</ul>
+<a href="#" class="service-btn" onclick="chatWA('Jual Beli Properti','Konsultasi')">Konsultasi</a>
+</div>
+
+<!-- 2 -->
+<div class="service-card">
+<h3>🎨 Desain Arsitektur</h3>
+<p>Layanan desain rumah modern, minimalis hingga mewah sesuai kebutuhan Anda.</p>
+<ul>
+<li>✔ Desain custom</li>
+<li>✔ Konsultasi gratis</li>
+<li>✔ Hasil profesional</li>
+</ul>
+<a href="#" class="service-btn" onclick="chatWA('Desain Arsitektur','Mulai Desain')">Mulai Desain</a>
+</div>
+
+<!-- 3 -->
+<div class="service-card">
+<h3>🧱 3D Modeling</h3>
+<p>Visualisasi rumah dalam bentuk 3D realistis sebelum pembangunan dimulai.</p>
+<ul>
+<li>✔ Render realistis</li>
+<li>✔ Detail akurat</li>
+<li>✔ Presentasi premium</li>
+</ul>
+<a href="#" class="service-btn" onclick="chatWA('3D Modeling','Request 3D')">Request 3D</a>
+</div>
+
+<!-- 4 -->
+<div class="service-card">
+<h3>📐 Renovasi & Bangun</h3>
+<p>Melayani pembangunan dan renovasi rumah dengan tenaga profesional.</p>
+<ul>
+<li>✔ Tim berpengalaman</li>
+<li>✔ Material berkualitas</li>
+<li>✔ Tepat waktu</li>
+</ul>
+<a href="#" class="service-btn" onclick="chatWA('Renovasi Rumah','Mulai Renovasi')">Mulai Renovasi</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+
+<div class="contact-wrapper">
+
+<h1>Hubungi Kami</h1>
+<p class="contact-desc">
+Butuh bantuan atau ingin konsultasi properti? Tim EMKATE siap membantu Anda kapan saja.
+</p>
+
+<div class="contact-container">
+
+<!-- FORM -->
+<div class="contact-form">
+<h2>Kirim Pesan</h2>
+
+<input type="text" placeholder="Nama Lengkap">
+<input type="email" placeholder="Email Aktif">
+<textarea placeholder="Tulis pesan Anda..."></textarea>
+
+<button>Kirim Pesan</button>
+</div>
+
+<!-- INFO -->
+<div class="contact-info">
+<h2>Informasi Kontak</h2>
+
+<p>📍 Lokasi: Indonesia</p>
+<p>📞 WhatsApp: 0819-3459-7859</p>
+<p>📧 Email: emkatedesain@gmail.com</p>
+
+<a href="https://wa.me/6281934597859" target="_blank" class="contact-wa">
+💬 Chat WhatsApp
+</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+<div class="modal-content">
+<img id="modalImg">
+<h2 id="modalTitle"></h2>
+<p id="modalPrice"></p>
+<button onclick="closeModal()">Tutup</button>
+</div>
+</div>
+
+<!-- FLOATING WA -->
+<a class="floating-wa" href="https://wa.me/6281934597859" target="_blank">💬</a>
+
+<footer>
+<p>© 2026 EMKATE Property</p>
+</footer>
+
+<script>
+function showPage(id){
+document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
+
+function openModal(img,title,price){
+modal.style.display='flex';
+modalImg.src=img;
+modalTitle.innerText=title;
+modalPrice.innerText=price;
+}
+
+function closeModal(){modal.style.display='none';}
+
+function filterProperty(){
+let type=filterType.value;
+let price=filterPrice.value;
+
+document.querySelectorAll('.card').forEach(card=>{
+let cType=card.dataset.type;
+let cPrice=parseInt(card.dataset.price);
+
+let show=true;
+
+if(type!='all' && cType!=type) show=false;
+
+if(price!='all'){
+if(price=="1000" && cPrice>=1000) show=false;
+if(price=="2000" && (cPrice<1000 || cPrice>2000)) show=false;
+if(price=="3000" && cPrice<=2000) show=false;
+}
+
+card.style.display=show?"block":"none";
+});
+}
+
+function searchProperty(){
+let input=searchInput.value.toLowerCase();
+
+document.querySelectorAll('.card').forEach(card=>{
+let title=card.querySelector('h3').innerText.toLowerCase();
+card.style.display=title.includes(input)?"block":"none";
+});
+}
+
+function chatWA(nama,harga){
+let pesan=`Halo, saya tertarik dengan ${nama} (${harga}).`;
+window.open(`https://wa.me/6281934597859?text=${encodeURIComponent(pesan)}`);
+}
+</script>
+
+</body>
+</html>
