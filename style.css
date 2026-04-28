@@ -78,47 +78,63 @@ color:gold;
 }
 
 /* ================= HERO ================= */
-.hero{
-position:relative;
-height:400px;
-display:flex;
-justify-content:center;
-align-items:center;
-overflow:hidden;
+.hero {
+position: relative;
+height: 90vh;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+overflow: hidden;
 }
 
-.hero-bg{
-position:absolute;
-width:50%;
-height:100%;
-background-size:cover;
-filter:blur(6px);
-transform:scale(1.1);
+.hero-bg {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+
+background: 
+linear-gradient(to right, rgba(2,6,23,0.9), rgba(2,6,23,0.3), rgba(2,6,23,0.9)),
+url('rumah1.png');
+
+background-size: cover;
+background-position: center;
+
+filter: blur(8px) brightness(0.7);
+transform: scale(1.1);
+z-index: 1;
 }
 
-.left{left:0;background:url('rumah1.png') center/cover;}
-.right{right:0;background:url('rumah2.png') center/cover;}
-
-.hero::after{
-content:'';
-position:absolute;
-width:100%;
-height:100%;
-background:linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.4));
+.hero::before {
+content: "";
+position: absolute;
+top: -100px;
+left: -100px;
+width: 500px;
+height: 500px;
+background: radial-gradient(circle, rgba(0,140,255,0.3), transparent);
+filter: blur(100px);
+z-index: 2;
 }
 
-.hero::before{
-content:'';
-position:absolute;
-width:100%;
-height:100%;
-background:radial-gradient(circle, rgba(255,215,0,0.1), transparent);
+.hero::after {
+content: "";
+position: absolute;
+bottom: -100px;
+right: -100px;
+width: 500px;
+height: 500px;
+background: radial-gradient(circle, rgba(255,170,0,0.3), transparent);
+filter: blur(100px);
+z-index: 2;
 }
 
-.hero-content{
-position:relative;
-z-index:2;
-text-align:center;
+.hero-content {
+position: relative;
+z-index: 3;
+max-width: 700px;
 }
 
 /* SEARCH */
@@ -187,6 +203,8 @@ box-shadow:0 10px 30px rgba(0,0,0,0.7);
 
 .card img{
 width:100%;
+height:180px; /* samakan tinggi semua gambar */
+object-fit:cover; /* biar tidak gepeng & tetap rapi */
 border-radius:10px;
 }
 
@@ -340,17 +358,27 @@ height:100%;
 background:rgba(0,0,0,0.8);
 justify-content:center;
 align-items:center;
+animation:fadeIn 0.4s ease;
 }
 
 .modal-content{
 background:#1e293b;
 padding:20px;
-border-radius:10px;
+border-radius:12px;
 text-align:center;
+transform:scale(0.7);
+animation:zoomIn 0.4s ease forwards;
 }
 
-.modal img{
-width:100%;
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+@keyframes zoomIn{
+to{
+transform:scale(1);
+}
 }
 
 /* FLOATING WA */
@@ -397,4 +425,366 @@ letter-spacing:2px;
 transform:scale(1.05);
 text-shadow:0 0 10px rgba(255,215,0,0.7);
 transition:0.3s;
+}
+.github-contact{
+margin-top:15px;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.github-icon-contact{
+width:35px;
+height:35px;
+cursor:pointer;
+transition:0.3s;
+filter: invert(1);
+}
+
+.github-icon-contact:hover{
+transform:scale(1.2) rotate(5deg);
+}
+/* SEARCH MODERN TANPA BOX */
+.search-modern{
+margin-top:25px;
+display:flex;
+justify-content:center;
+align-items:center;
+gap:10px;
+}
+
+/* input garis bawah */
+.search-modern input{
+background:transparent;
+border:none;
+border-bottom:2px solid rgba(255,255,255,0.3);
+padding:10px;
+width:280px;
+color:white;
+font-size:15px;
+outline:none;
+transition:0.3s;
+}
+
+/* efek focus glow */
+.search-modern input:focus{
+border-bottom:2px solid gold;
+box-shadow:0 5px 15px rgba(255,215,0,0.3);
+}
+
+/* placeholder */
+.search-modern input::placeholder{
+color:rgba(255,255,255,0.5);
+}
+
+/* tombol modern */
+.search-modern button{
+background:linear-gradient(45deg,gold,orange);
+border:none;
+padding:10px 18px;
+border-radius:50px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.search-modern button:hover{
+transform:scale(1.05);
+box-shadow:0 0 15px rgba(255,215,0,0.7);
+}
+/* ================= PREMIUM SERVICE BUTTON ================= */
+.premium-btn{
+display:inline-block;
+margin-top:15px;
+padding:12px 20px;
+border-radius:50px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+letter-spacing:1px;
+position:relative;
+overflow:hidden;
+background:linear-gradient(45deg,#facc15,#f97316);
+transition:0.3s;
+}
+
+/* efek glow */
+.premium-btn::before{
+content:'';
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,0.6),transparent);
+transition:0.5s;
+}
+
+/* hover utama */
+.premium-btn:hover{
+transform:translateY(-3px) scale(1.05);
+box-shadow:0 0 20px rgba(255,215,0,0.8);
+}
+
+/* animasi geser cahaya */
+.premium-btn:hover::before{
+left:100%;
+}
+
+/* klik effect */
+.premium-btn:active{
+transform:scale(0.95);
+}
+
+/* beda warna tiap card (biar hidup 🔥) */
+.service-card:nth-child(1) .premium-btn{
+background:linear-gradient(45deg,#22c55e,#16a34a);
+}
+
+.service-card:nth-child(2) .premium-btn{
+background:linear-gradient(45deg,#3b82f6,#2563eb);
+}
+
+.service-card:nth-child(3) .premium-btn{
+background:linear-gradient(45deg,#a855f7,#7e22ce);
+}
+
+.service-card:nth-child(4) .premium-btn{
+background:linear-gradient(45deg,#f97316,#ea580c);
+}
+/* ================= LOGO PREMIUM ANIMATION ================= */
+.logo-animate{
+width:70px;
+cursor:pointer;
+transition:0.3s;
+animation:floatLogo 3s ease-in-out infinite;
+}
+
+/* efek glow */
+.logo-animate::after{
+content:'';
+position:absolute;
+width:80px;
+height:80px;
+background:radial-gradient(circle, rgba(255,215,0,0.4), transparent);
+filter:blur(20px);
+z-index:-1;
+}
+
+/* animasi naik turun */
+@keyframes floatLogo{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-6px);}
+100%{transform:translateY(0px);}
+}
+
+/* hover effect */
+.logo-animate:hover{
+transform:scale(1.1) rotate(5deg);
+filter:drop-shadow(0 0 15px gold);
+}
+
+/* klik effect */
+.logo-animate:active{
+transform:scale(0.95);
+}
+/* gambar lebih hidup */
+.card{
+overflow:hidden; /* penting biar efek tidak keluar */
+position:relative;
+}
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:10px;
+transition:0.5s;
+}
+
+/* zoom + sedikit rotate */
+.card:hover img{
+transform:scale(1.1) rotate(1deg);
+filter:brightness(1.1);
+}
+/* tombol ripple */
+button, .premium-btn, .wa-btn{
+position:relative;
+overflow:hidden;
+}
+
+/* efek gelombang */
+button::after, .premium-btn::after, .wa-btn::after{
+content:'';
+position:absolute;
+width:10px;
+height:10px;
+background:rgba(255,255,255,0.6);
+border-radius:50%;
+transform:scale(0);
+opacity:0;
+pointer-events:none;
+}
+
+button:active::after,
+.premium-btn:active::after,
+.wa-btn:active::after{
+animation:ripple 0.6s ease;
+}
+
+@keyframes ripple{
+0%{
+transform:scale(0);
+opacity:0.8;
+}
+100%{
+transform:scale(20);
+opacity:0;
+}
+}
+.social-contact {
+display: flex;
+align-items: center;
+gap: 15px;
+margin-top: 10px;
+}
+
+.social-contact p {
+margin-right: 10px;
+}
+
+.social-icon {
+width: 32px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.social-icon:hover {
+transform: scale(1.2);
+}
+.social-contact {
+display: flex;
+align-items: center;
+gap: 15px;
+margin-top: 10px;
+}
+
+.social-contact p {
+margin-right: 10px;
+}
+
+.social-icon {
+width: 32px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.social-icon:hover {
+transform: scale(1.2);
+}
+body {
+margin: 0;
+font-family: 'Segoe UI', sans-serif;
+color: white;
+background: #020617;
+position: relative;
+overflow-x: hidden;
+}
+body::before {
+content: "";
+position: fixed;
+top: -100px;
+left: -100px;
+width: 600px;
+height: 600px;
+background: radial-gradient(circle, rgba(0,140,255,0.4), transparent 70%);
+filter: blur(120px);
+z-index: -1;
+}
+
+body::after {
+content: "";
+position: fixed;
+bottom: -100px;
+right: -100px;
+width: 600px;
+height: 600px;
+background: radial-gradient(circle, rgba(255,170,0,0.4), transparent 70%);
+filter: blur(120px);
+z-index: -1;
+}
+body::after,
+body::before {
+pointer-events: none;
+}
+
+.overlay-dark {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.7));
+z-index: -1;
+}
+section {
+padding: 60px 20px;
+background: rgba(255,255,255,0.03);
+backdrop-filter: blur(10px);
+border-radius: 20px;
+margin: 20px;
+box-shadow: 0 0 40px rgba(0,0,0,0.5);
+}
+.contact-wrapper,
+.contact-container > div {
+background: rgba(255,255,255,0.05);
+border-radius: 20px;
+padding: 25px;
+backdrop-filter: blur(15px);
+border: 1px solid rgba(255,255,255,0.1);
+box-shadow: 
+0 0 30px rgba(0,0,0,0.6),
+0 0 60px rgba(0,0,0,0.4);
+}
+h1 {
+text-align: center;
+font-size: 40px;
+}
+
+h1 span {
+color: #fbbf24;
+}
+
+h1::after {
+content: "";
+display: block;
+width: 150px;
+height: 3px;
+margin: 15px auto;
+background: linear-gradient(to right, transparent, #fbbf24, transparent);
+box-shadow: 0 0 10px #fbbf24;
+}
+.contact-wa {
+display: inline-block;
+background: linear-gradient(45deg, #22c55e, #16a34a);
+padding: 14px 20px;
+border-radius: 12px;
+text-decoration: none;
+color: white;
+font-weight: bold;
+transition: 0.3s;
+box-shadow: 0 0 20px rgba(34,197,94,0.5);
+}
+
+.contact-wa:hover {
+transform: translateY(-3px) scale(1.03);
+box-shadow: 0 0 30px rgba(34,197,94,0.8);
+}
+.social-icon {
+width: 35px;
+transition: 0.3s;
+}
+
+.social-icon:hover {
+transform: scale(1.2);
+filter: drop-shadow(0 0 10px #fff);
 }

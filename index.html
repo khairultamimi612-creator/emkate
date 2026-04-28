@@ -6,14 +6,14 @@
 <title>EMKATE Property</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
-<body>
+<div class="overlay-dark"></div>
+<body >
 
 <header>
 
 <div class="logo-box" onclick="showPage('home')">
-<img src="logo.png" class="logo">
-<h2 class="brand">EMKATE</h2>
+<img src="logo.png" class="logo logo-animate">
+<h1 class="brand">EMKATE</h1>
 </div>
 
 <nav>
@@ -28,18 +28,17 @@
 <section id="home" class="active">
 
 <div class="hero">
-<div class="hero-bg left"></div>
-<div class="hero-bg right"></div>
+  <div class="hero-bg"></div>
 
-<div class="hero-content">
-<h1>Cari Properti Impian Anda</h1>
-<p>Temukan rumah terbaik dengan EMKATE</p>
+  <div class="hero-content">
+    <h1>Cari Properti Impian Anda</h1>
+    <p>Temukan rumah terbaik dengan EMKATE</p>
 
-<div class="search-box">
-<input type="text" id="searchInput" placeholder="Cari rumah..." onkeyup="searchProperty()">
-<button onclick="searchProperty()">Cari</button>
-</div>
-</div>
+    <div class="search-modern">
+      <input type="text" id="searchInput" placeholder="🔍 Cari rumah impian..." onkeyup="searchProperty()">
+      <button onclick="searchProperty()">Cari</button>
+    </div>
+  </div>
 </div>
 
 <!-- FILTER -->
@@ -149,7 +148,6 @@ Kami menyediakan berbagai layanan properti dan desain untuk membantu Anda mendap
 
 <div class="services-grid">
 
-<!-- 1 -->
 <div class="service-card">
 <h3>🏠 Jual Beli Properti</h3>
 <p>Kami menyediakan rumah siap huni dengan lokasi strategis dan harga terbaik.</p>
@@ -158,10 +156,9 @@ Kami menyediakan berbagai layanan properti dan desain untuk membantu Anda mendap
 <li>✔ Lokasi premium</li>
 <li>✔ Siap huni</li>
 </ul>
-<a href="#" class="service-btn" onclick="chatWA('Jual Beli Properti','Konsultasi')">Konsultasi</a>
+<a href="#" class="service-btn premium-btn" onclick="chatWA('Jual Beli Properti','Konsultasi')">Konsultasi</a>
 </div>
 
-<!-- 2 -->
 <div class="service-card">
 <h3>🎨 Desain Arsitektur</h3>
 <p>Layanan desain rumah modern, minimalis hingga mewah sesuai kebutuhan Anda.</p>
@@ -170,10 +167,9 @@ Kami menyediakan berbagai layanan properti dan desain untuk membantu Anda mendap
 <li>✔ Konsultasi gratis</li>
 <li>✔ Hasil profesional</li>
 </ul>
-<a href="#" class="service-btn" onclick="chatWA('Desain Arsitektur','Mulai Desain')">Mulai Desain</a>
+<a href="#" class="service-btn premium-btn" onclick="chatWA('Desain Arsitektur','Mulai Desain')">Mulai Desain</a>
 </div>
 
-<!-- 3 -->
 <div class="service-card">
 <h3>🧱 3D Modeling</h3>
 <p>Visualisasi rumah dalam bentuk 3D realistis sebelum pembangunan dimulai.</p>
@@ -182,10 +178,9 @@ Kami menyediakan berbagai layanan properti dan desain untuk membantu Anda mendap
 <li>✔ Detail akurat</li>
 <li>✔ Presentasi premium</li>
 </ul>
-<a href="#" class="service-btn" onclick="chatWA('3D Modeling','Request 3D')">Request 3D</a>
+<a href="#" class="service-btn premium-btn" onclick="chatWA('3D Modeling','Request 3D')">Request 3D</a>
 </div>
 
-<!-- 4 -->
 <div class="service-card">
 <h3>📐 Renovasi & Bangun</h3>
 <p>Melayani pembangunan dan renovasi rumah dengan tenaga profesional.</p>
@@ -194,7 +189,7 @@ Kami menyediakan berbagai layanan properti dan desain untuk membantu Anda mendap
 <li>✔ Material berkualitas</li>
 <li>✔ Tepat waktu</li>
 </ul>
-<a href="#" class="service-btn" onclick="chatWA('Renovasi Rumah','Mulai Renovasi')">Mulai Renovasi</a>
+<a href="#" class="service-btn premium-btn" onclick="chatWA('Renovasi Rumah','Mulai Renovasi')">Mulai Renovasi</a>
 </div>
 
 </div>
@@ -215,28 +210,33 @@ Butuh bantuan atau ingin konsultasi properti? Tim EMKATE siap membantu Anda kapa
 
 <div class="contact-container">
 
-<!-- FORM -->
 <div class="contact-form">
 <h2>Kirim Pesan</h2>
-
 <input type="text" placeholder="Nama Lengkap">
 <input type="email" placeholder="Email Aktif">
 <textarea placeholder="Tulis pesan Anda..."></textarea>
-
 <button>Kirim Pesan</button>
 </div>
 
-<!-- INFO -->
 <div class="contact-info">
 <h2>Informasi Kontak</h2>
-
 <p>📍 Lokasi: Indonesia</p>
 <p>📞 WhatsApp: 0819-3459-7859</p>
 <p>📧 Email: emkatedesain@gmail.com</p>
+<div class="github-contact">
+</div>
 
-<a href="https://wa.me/6281934597859" target="_blank" class="contact-wa">
-💬 Chat WhatsApp
+<a href="https://github.com/khairultamimi612-creator/emkate" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" class="social-icon">
 </a>
+
+<a href="https://www.instagram.com/strymi9?igsh=b2w4MjVqOXBvc2N3" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="social-icon">
+</a>
+<a href="https://www.tiktok.com/@strymi9?_r=1&_t=ZS-95uPNmnUtqy" target="_blank">
+<img src="tiktok.webp" class="social-icon">
+</a>
+
 </div>
 
 </div>
@@ -245,7 +245,6 @@ Butuh bantuan atau ingin konsultasi properti? Tim EMKATE siap membantu Anda kapa
 
 </section>
 
-<!-- MODAL -->
 <div class="modal" id="modal">
 <div class="modal-content">
 <img id="modalImg">
@@ -255,7 +254,6 @@ Butuh bantuan atau ingin konsultasi properti? Tim EMKATE siap membantu Anda kapa
 </div>
 </div>
 
-<!-- FLOATING WA -->
 <a class="floating-wa" href="https://wa.me/6281934597859" target="_blank">💬</a>
 
 <footer>
